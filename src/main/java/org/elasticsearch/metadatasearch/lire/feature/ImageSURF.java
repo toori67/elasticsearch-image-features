@@ -13,9 +13,10 @@ public class ImageSURF extends SurfFeature implements ImageLireFeature {
     @Override
     public float getSimilarity(ImageLireFeature ilf) {
         float distance = getDistance(ilf);
-        if (distance <= 0) {
-            distance = Integer.MAX_VALUE;
+        if (distance == 0.f) {
+            distance = Float.MIN_VALUE;
         }
+
         return 1/distance;
     }
 }
